@@ -1,14 +1,19 @@
+import { useState } from 'react';
 import './App.css'
-import { BarcodeScanner } from './components/BarcodeScanner'
+import BarcodeScanner from './components/BarcodeScanner'
 
 function App() {
+  const [isbn, setIsbn] = useState(''); // Estado para guardar el código ISBN
 
   return (
     <>
       <h1 className="text-3xl font-bold underline">
-        Hello world!
+        {isbn}
       </h1>
-      <BarcodeScanner />
+      <BarcodeScanner 
+        isbn={isbn}
+        setIsbn={setIsbn}
+        />
     </>
   )
 }
